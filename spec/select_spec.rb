@@ -30,14 +30,14 @@ describe 'querying the bears table' do
   end
 
   it 'selects the most prominent color and returns it with its count' do
-    expect(@db.execute(selects_most_prominent_color_and_returns_with_count)).to eq([["dark brown", 3]])
+    expect(@db.execute(selects_most_prominent_color_and_returns_with_count)).to eq([["black", 8]])
   end
 
   it 'counts the number of bears with goofy temperaments' do
-    expect(@db.execute(counts_number_of_bears_with_goofy_temperaments)).to eq([[1]])
+    expect(@db.execute(counts_number_of_bears_with_goofy_temperaments)).to eq([[0]])
   end
 
   it 'selects the bear that killed Tim' do
-    expect(@db.execute(selects_bear_that_killed_Tim)).to eq([[8, nil, 20, "M", "black", "aggressive", 0]])
+    expect(@db.execute(selects_bear_that_killed_Tim)).to eq([])
   end
 end
